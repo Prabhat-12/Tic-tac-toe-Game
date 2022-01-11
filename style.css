@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:'Lobster Two', cursive;
+    color: rgb(175, 133, 27);
+}
+
+.container{
+    max-width: 1500px;
+    height: 655px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scene {
+    width: 1100px;
+    height: 550px;
+    background-color: rgb(255 244 218);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #af851b;
+    box-shadow: inset 1px 1px 20px 7px slategrey;
+}
+
+#Tic:hover {
+    color: slategray;
+    text-shadow: 3px 2px 2px #af851b;
+}
+
+.left{
+    margin-right: 100px;
+}
+h1{
+    font-size: 60px;
+}
+
+.restart {
+    color: slategray;
+    width: 150px;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 10px;
+    height: 30px;
+    border: 3px solid slategray;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.restart:hover {
+    background-color: slategray;
+    color: rgb(255 255 255);
+}
+
+.game{
+    width: 415px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gameInfo{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header{
+    display: flex;
+    color: slategray;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 9px;
+}
+.header .player-x{
+    flex-grow: 1;
+    border-bottom: 4px solid slategray;
+}
+.player-x.active{
+    color: rgb(175, 133, 27);
+    border-color: rgb(175, 133, 27);
+}
+.header .player-o{
+    flex-grow: 1;
+    border-bottom: 4px solid slategray;
+}
+.player-o.active{
+    color: rgb(175, 133, 27);
+    border-color: rgb(175, 133, 27);
+}
+
+.board{
+    /* border: 1px solid red; */
+    display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: repeat(3, 1.5fr);
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.boardTile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    cursor: pointer;
+}
+
+.boardTile:not(:nth-child(3n)){
+    border-right: 4px solid slategray;
+}
+
+.boardTile:not(:nth-last-child(-n+3)){
+    border-bottom: 4px solid slategray;
+}
+
+.boardTile:hover{
+    background-color: #e5e5e5;
+}
+
+@media screen and (max-width: 800px)
+{
+    .container{
+        min-height: 750px;
+    }
+    .scene{
+        flex-wrap: wrap;
+        min-height: 750px;
+    }
+    .left{
+        margin-right: 0px;
+    }
+    h1{
+        font-size: 2.8rem;
+    }
+    .restart{
+        margin-left: 85px;
+    }
+    .game{
+        width: 342px;
+    }
+    .gameInfo{
+        font-size: 40px;
+    }
+}
